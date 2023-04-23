@@ -24,7 +24,23 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "config":{
+        "firebase":{
+          
+            "apiKey": "AIzaSyDJ36BmxeulElY3Upj7myLpFLWwgKoGTTQ",
+            "authDomain": "webptype.firebaseapp.com",
+            "databaseURL": "https://webptype-default-rtdb.firebaseio.com",
+            "projectId": "webptype",
+            "storageBucket": "webptype.appspot.com",
+            "messagingSenderId": "634537620690",
+            "appId": "1:634537620690:web:b0c769eaa36d8b4a94690b",
+            "measurementId": "G-0NM34EY6BJ"
+          
+        }
+    }
+     
+      
     }
   }
 }

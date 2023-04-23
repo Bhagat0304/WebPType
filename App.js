@@ -1,12 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { Provider } from 'react-redux';
+import {legacy_createStore as createStore, applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
+import rootReducer from './src/redux/reducers'
+import Constants from 'expo-constants'
+import {initializeApp, getApps} from 'firebase/app';
+import AuthScreen from './src/screens/auth';
+
+const store = createStore(rootReducer,applyMiddleware(thunk))
+if(getApps().length == 0){
+  initializeApp(Constants.manifest.web.config.firebase)
+
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store = {store}>
+      <AuthScreen/>
+    </Provider>
+    
   );
 }
 
